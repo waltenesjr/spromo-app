@@ -7,22 +7,26 @@
 </ion-header>
 
 <ion-content class="ion-text-center" padding>
-
     <img src="assets/logo.png" width="250" height="200">
-
-    <ion-item>
-        <ion-label color="medium" position="floating">Login</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label color="medium" position="floating">Senha</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
 
     <br/>
 
-    <ion-button size="large" shape="round" expand="full" color="medium">
+    <ion-label *ngIf="errorLogin" color="danger">Login ou Senha invalido!</ion-label>
+    <ion-label *ngIf="errorLoginEmpty" color="danger">Preencha todos os campos!</ion-label>
+
+    <ion-list>
+        <ion-item (click)="clearMessage()">
+            <ion-label color="medium" position="floating">Login</ion-label>
+            <ion-input [(ngModel)]="login"></ion-input>
+        </ion-item>
+
+        <ion-item (click)="clearMessage()">
+            <ion-label color="medium" position="floating">Senha</ion-label>
+            <ion-input [(ngModel)]="senha"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-button (click)="logar()" size="large" shape="round" expand="full" color="medium">
         <ion-ripple-effect></ion-ripple-effect>
         Entrar
     </ion-button>

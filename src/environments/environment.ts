@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  URL_SERVER_API: 'http://localhost/spromo',
+  URL_SERVER_API: 'https://sanambiental.com.br/spromo',
   production: false
 };
 
