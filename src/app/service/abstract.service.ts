@@ -12,7 +12,7 @@ export class AbstractService {
         this.route = `${environment.URL_SERVER_API}` + '/' + route + '/';
     }
 
-    all(): Observable<ValueModel> {
-        return this._http.get(this.route).pipe(map(resp => resp as ValueModel));
+    all(): Observable<ValueModel[]> {
+        return this._http.get(this.route).pipe(map(resp => resp as ValueModel[]));
     }
 }

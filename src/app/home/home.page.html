@@ -1,19 +1,30 @@
 <ion-header>
     <ion-toolbar align="center">
         <ion-title>
-            <img src="assets/logo.png" width="60" height="35">
+            <img src="assets/logo.png" width="60" height="45">
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
-        <ion-label>Estabelecimentos</ion-label>
-        <ion-select>
-            <ion-select-option value="f">Female</ion-select-option>
-            <ion-select-option value="m">Male</ion-select-option>
-            <ion-select-option value="i">Indefined</ion-select-option>
-            <ion-select-option value="g">Gay</ion-select-option>
-        </ion-select>
-    </ion-item>
+    <ion-list>
+        <ion-item>
+            <ion-label>Estabelecimentos</ion-label>
+            <ion-select [(ngModel)]="estabelecimento" placeholder="Selecione">
+                <ion-select-option value="est" *ngFor="let est of estabelecimentos">{{est.value}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Pontos</ion-label>
+            <ion-select [(ngModel)]="ponto" placeholder="Selecione">
+                <ion-select-option value="ponto" *ngFor="let ponto of pontos">{{ponto.value}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <br/>
+    <ion-button size="large" shape="round" expand="full" color="medium">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="camera"></ion-icon>
+    </ion-button>
 </ion-content>

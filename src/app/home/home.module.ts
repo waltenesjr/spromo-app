@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import {EstabelecimentoService} from '../service/estabelecimento.service';
+import {PontoService} from '../service/ponto.service';
 
 @NgModule({
   imports: [
@@ -18,6 +20,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers: [EstabelecimentoService, PontoService]
 })
 export class HomePageModule {}
