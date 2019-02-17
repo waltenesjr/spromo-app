@@ -11,14 +11,13 @@
         <ion-item>
             <ion-label>Estabelecimentos</ion-label>
             <ion-select [(ngModel)]="estabelecimento" placeholder="Selecione">
-                <ion-select-option value="est" *ngFor="let est of estabelecimentos">{{est.value}}</ion-select-option>
+                <ion-select-option value="est" *ngFor="let est of estabelecimentos">{{ est.value }}</ion-select-option>
             </ion-select>
         </ion-item>
-
         <ion-item>
             <ion-label>Pontos</ion-label>
             <ion-select [(ngModel)]="ponto" placeholder="Selecione">
-                <ion-select-option value="ponto" *ngFor="let ponto of pontos">{{ponto.value}}</ion-select-option>
+                <ion-select-option value="ponto" *ngFor="let ponto of pontos">{{ ponto.value }}</ion-select-option>
             </ion-select>
         </ion-item>
     </ion-list>
@@ -27,4 +26,23 @@
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="camera"></ion-icon>
     </ion-button>
+    <br/>
+    <div class="ion-text-center">
+        <ion-grid>
+            <ion-row>
+                <ion-col *ngFor="let photo of photos" size="auto">
+                    <ion-thumbnail>
+                        <ion-img [src]="photo"></ion-img>
+                    </ion-thumbnail>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>
+
+<ion-footer *ngIf="photos.length > 0" padding>
+    <ion-button size="large" shape="round" expand="full" color="medium">
+        <ion-ripple-effect></ion-ripple-effect>
+        Enviar para análise
+    </ion-button>
+</ion-footer>
